@@ -2,7 +2,10 @@ import React from "react";
 import PropTypes from 'prop-types';
 
 export default function Navbar(props) {
-
+    
+    const onClickHandle = ()=>{
+        props.toggleMode();
+    }
 
   return (
     <>
@@ -36,20 +39,8 @@ export default function Navbar(props) {
                         </li>
                     </ul>
 
-                    {/* <form className="d-flex">
-                        <input
-                            className="form-control me-2"
-                            type="search"
-                            placeholder="Search"
-                            aria-label="Search"
-                        />
-                        <button className="btn btn-outline-success" type="submit">
-                            Search
-                        </button>
-                    </form> */}
-
                     <div className={`form-check form-switch text-${props.mode==="dark"?"light":"dark"}`}>
-                    <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+                    <input className="form-check-input" onClick={onClickHandle} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
                     <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Dark Mode</label>
                     </div>
 

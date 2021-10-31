@@ -12,24 +12,25 @@ export default function TexthtmlForm(props) {
 
     const onUpperCase=()=>{
         settext(text.toUpperCase());
-        // setTimeout(()=>{
-        //     settext("")
-        // }, 4000)
+        props.showAlert("Success: ", "Converted to UpperCase ")
     }
 
     const onLowerCase=()=>{
         settext(text.toLowerCase());
-        // setTimeout(()=>{
-        //     settext("")
-        // }, 4000)
+        props.showAlert("Success: ", "Converted to LowerCase ")
+        
     }
 
     const onExtraSpace=()=>{
         settext(text.replace(/  +/g, ' '))
+        props.showAlert("Success: ", "Removed extra spaces ")
+
     }
 
     const onClearText=()=>{
         settext("");
+        props.showAlert("Success: ", "Text cleared")
+
     }
 
   return (
