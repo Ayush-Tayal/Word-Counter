@@ -3,32 +3,39 @@ import { useState } from "react";
 
 export default function TexthtmlForm(props) {
 
-    const [text, settext] = useState("");
+    const [text, setText] = useState("");
 
     const handleOnChange=(e)=>{
-        settext(e.target.value);
+        setText(e.target.value);
         // console.log("onclick fired", text);
     }
 
     const onUpperCase=()=>{
-        settext(text.toUpperCase());
+        setText(text.toUpperCase());
         props.showAlert("Success: ", "Converted to UpperCase ")
     }
 
     const onLowerCase=()=>{
-        settext(text.toLowerCase());
+        setText(text.toLowerCase());
         props.showAlert("Success: ", "Converted to LowerCase ")
         
     }
 
     const onExtraSpace=()=>{
-        settext(text.replace(/  +/g, ' '))
+        setText(text.replace(/  +/g, ' '))
         props.showAlert("Success: ", "Removed extra spaces ")
 
     }
 
+    const onCopyText=()=>{
+        let text = document.getElementById("exampleFormControl");
+        text.select();
+        navigator.clipboard.writeText(text.value);
+        props.showAlert("Success: ", "Text Copied")
+
+    }
     const onClearText=()=>{
-        settext("");
+        setText("");
         props.showAlert("Success: ", "Text cleared")
 
     }
@@ -43,6 +50,7 @@ export default function TexthtmlForm(props) {
             <button type="button" className="btn btn-primary mt-4 mx-2 " onClick={onUpperCase} >Convert Text to Uppercase</button>
             <button type="button" className="btn btn-primary mt-4 mx-2" onClick={onLowerCase} >Convert Text to LowerCase</button>
             <button type="button" className="btn btn-primary mt-4 mx-2" onClick={onExtraSpace} >Remove extra space</button>
+            <button type="button" className="btn btn-primary mt-4 mx-2" onClick={onCopyText} >Copy Text</button>
             <button type="button" className="btn btn-primary mt-4 mx-2" onClick={onClearText} >Clear Text</button>
 
         </div>
