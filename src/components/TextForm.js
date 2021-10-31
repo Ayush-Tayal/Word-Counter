@@ -57,8 +57,9 @@ export default function TexthtmlForm(props) {
         
         <div className="container my-5 text-center">
             <h2 >Your text summary</h2>
-            <p>{text.split(" ").length} words and {text.length} characters</p>
+            <p><b>{text.length===0?"0":text.trim().replace(/  +/g, " ").split(" ").length} </b> words and <b>{text.length}</b> characters</p>
 
+            <p>{text.split(" ").length / 200} min read </p>
             <h2 >Preview your text</h2>
             
             <p>{text===""?"Enter text to preview":text}</p>
