@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-https://peaceful-edison-8d4d4c.netlify.app
+# You can see deployment here: https://peaceful-edison-8d4d4c.netlify.app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
