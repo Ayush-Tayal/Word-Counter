@@ -49,7 +49,7 @@ function App() {
           <Alerts alert={alert}/>
       
         <Switch>
-          <Route exact path="/home">  <TextForm heading = "Enter your text below " mode={mode} showAlert={showAlert}/> </Route>
+          <Route exact path="/">  <TextForm heading = "Enter your text below " mode={mode} showAlert={showAlert}/> </Route>
           <Route exact path="/about"> <About/> </Route>
           <Route><Error/></Route>
         </Switch>
