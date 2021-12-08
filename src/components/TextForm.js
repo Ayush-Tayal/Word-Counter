@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 export default function TexthtmlForm(props) {
-
+    console.log("Inside Home", props)
     const [text, setText] = useState("");
 
     const handleOnChange=(e)=>{
